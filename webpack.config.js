@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
@@ -14,9 +14,9 @@ module.exports = {
       use: ['babel-loader']
     }, {
       test: /\.(css|scss)$/,
-      use: ["style-loader", // creates style nodes from JS strings
-        "css-loader", // translates CSS into CommonJS
-        "sass-loader" // compiles Sass to CSS, using Node Sass by default
+      use: ['style-loader', // creates style nodes from JS strings
+        'css-loader', // translates CSS into CommonJS
+        'sass-loader' // compiles Sass to CSS, using Node Sass by default
       ]
     }, ]
   },
@@ -24,9 +24,10 @@ module.exports = {
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
   devServer: {
-    contentBase: path.join(__dirname, 'src')
+    contentBase: path.join(__dirname, 'src'),
+    historyApiFallback: true
   },
   plugins: [new HtmlWebpackPlugin({
     template: path.join(__dirname, 'src', 'index.html')
   })]
-};
+}
