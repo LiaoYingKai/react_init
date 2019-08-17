@@ -7,10 +7,10 @@ function LayoutHeader(){
 		<header>
 			<ul>
 				<li>
-					<NavLink to="/">Home</NavLink>
+					<NavLink exact to="/" activeClassName="activeLink">Home</NavLink>
 				</li>
 				<li>
-					<NavLink to="/About">About</NavLink>
+					<NavLink to="/About" activeClassName="activeLink">About</NavLink>
 				</li>
 			</ul>
 		</header>
