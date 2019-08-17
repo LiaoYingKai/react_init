@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import reactIcon from '../../icon/react-icon.png'
 import './style.scss';
 
 class Main extends Component {
 	render() {
 		return (
-			<div>
-				Hello World!!!
+			<div className="home">
+				<img src={reactIcon}></img>
+				<div>
+					Hello World!!!
+				</div>
 			</div>
+
 		)
 	}
 }
