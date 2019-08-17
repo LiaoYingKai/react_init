@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import reactIcon from '../../icon/react-icon.png'
 import './style.scss';
 
-class Main extends Component {
+class Home extends Component {
 	render() {
 		return (
 			<div className="home">
@@ -17,4 +17,4 @@ class Main extends Component {
 	}
 }
 
-export default Main
+export default Home
