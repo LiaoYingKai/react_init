@@ -4,7 +4,7 @@ import './style.scss'
 
 function LayoutHeader(){
 	return (
-		<header>
+		<div className="header">
 			<ul>
 				<li>
 					<NavLink exact to="/" activeClassName="activeLink">Home</NavLink>
@@ -13,7 +13,7 @@ function LayoutHeader(){
 					<NavLink to="/About" activeClassName="activeLink">About</NavLink>
 				</li>
 			</ul>
-		</header>
+		</div>
 	)
 }
 

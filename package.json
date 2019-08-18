@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
 		"watch": "webpack --watch ",
-		"webpack": "webpack"
+		"build": "webpack"
 	},
 	"keywords": [],
 	"author": "",
