@@ -24,3 +24,28 @@ export function addTodoFail(error){
 		erroe,
 	}
 }
+
+export function asyncAddTodo(todo){
+	return dispatch => {
+		return setTimeout(()=>{
+			dispatch(addTodoSuccess(todo))
+		},2000)
+	}
+}
+
+// useing react thunk
+// export function getAlbum(){
+//     return dispatch => {
+//         // dispatch(getUserAlbums());
+//         return fetch('http://localhost:3000/search?keywords=頑童', {
+//             method: 'GET',
+//         })
+//         .then(response => {
+//             return response.json()
+//         })
+//         .then(data=>{
+//             console.log(data)
+//         })
+//         .catch(error => dispatch(getUserAlbumsError(error)));
+//         };
+// }

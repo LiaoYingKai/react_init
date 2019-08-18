@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
-import { addTodoSuccess, } from '../../actions/todo-actions'
+import { addTodoSuccess, asyncAddTodo } from '../../actions/todo-actions'
 import './style.scss';
 
 class About extends Component {
@@ -21,7 +21,7 @@ class About extends Component {
 	render() {
 		const { inputValue } = this.state
 		const { _handleChangeValue } = this
-		const { todos, addTodoSuccess } = this.props
+		const { todos, addTodoSuccess, asyncAddTodo } = this.props
 
 		return (
 			<div className="about">
@@ -29,7 +29,7 @@ class About extends Component {
 					TODO：
 					<input onChange={ (event) => { _handleChangeValue(event) }} value={inputValue}></input>
 					<button onClick={ () => { addTodoSuccess(inputValue)} }>同步 Add</button>
-					<button>非同步 Add</button>
+					<button onClick={ () => { asyncAddTodo(inputValue) } }>非同步 Add</button>
 				</div>
 				<ul>
 					{
@@ -53,7 +53,8 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch){
 	return  {
-		addTodoSuccess: (todo) => dispatch(addTodoSuccess(todo))
+		addTodoSuccess: (todo) => dispatch(addTodoSuccess(todo)),
+		asyncAddTodo: (todo) => dispatch(asyncAddTodo(todo))
 	}
 }
 
