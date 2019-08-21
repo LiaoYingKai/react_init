@@ -1,39 +1,45 @@
-import React, {Component} from 'react';
+import React, { Component, } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux'
-import { addTodoSuccess, asyncAddTodo } from '../../actions/todo-actions'
+import { connect } from 'react-redux';
+import { addTodoSuccess, asyncAddTodo } from '../../actions/todo-actions';
 import './style.scss';
 
+const propTypes = { 
+	todos: PropTypes.array,
+	addTodoSuccess: PropTypes.func,
+	asyncAddTodo: PropTypes.func,
+};
+
 class About extends Component {
-	constructor(){
+	constructor() {
 		super();
 		this.state = {
 			inputValue: '',
-		}
-		this._handleChangeValue = this._handleChangeValue.bind(this)
+		};
+		this._handleChangeValue = this._handleChangeValue.bind(this);
 	}
 
-	_handleChangeValue(event){
+	_handleChangeValue(event) {
 		this.setState({
 			inputValue: event.target.value
-		})
+		});
 	}
 	render() {
-		const { inputValue } = this.state
-		const { _handleChangeValue } = this
-		const { todos, addTodoSuccess, asyncAddTodo } = this.props
+		const { inputValue } = this.state;
+		const { _handleChangeValue } = this;
+		const { todos, addTodoSuccess, asyncAddTodo } = this.props;
 
 		return (
 			<div className="about">
 				<div >
 					TODO：
-					<input onChange={ (event) => { _handleChangeValue(event) }} value={inputValue}></input>
-					<button onClick={ () => { addTodoSuccess(inputValue)} }>同步 Add</button>
-					<button onClick={ () => { asyncAddTodo(inputValue) } }>非同步 Add</button>
+					<input onChange={ (event) => { _handleChangeValue(event); }} value={inputValue}></input>
+					<button onClick={ () => { addTodoSuccess(inputValue); }}>同步 Add</button>
+					<button onClick={ () => { asyncAddTodo(inputValue); }}>非同步 Add</button>
 				</div>
 				<ul>
 					{
-						todos.map((item, index) =>(
+						todos.map((item, index) => (
 							<li key={`${item}__${index}`}>
 								{item}
 							</li>
@@ -41,22 +47,22 @@ class About extends Component {
 					}
 				</ul>
 			</div>
-		)
+		);
 	}
 }
 
+About.propTypes = propTypes;
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
 	return {
 		todos: state.todo.data,
-	}
+	};
 }
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
 	return  {
 		addTodoSuccess: (todo) => dispatch(addTodoSuccess(todo)),
 		asyncAddTodo: (todo) => dispatch(asyncAddTodo(todo))
-	}
+	};
 }
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(About)
+export default connect(mapStateToProps, mapDispatchToProps)(About);

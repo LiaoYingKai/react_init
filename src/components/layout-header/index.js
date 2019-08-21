@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
-import './style.scss'
+import React from 'react';
+import { NavLink, } from 'react-router-dom';
+import './style.scss';
 
-function LayoutHeader(){
+function LayoutHeader() {
 	return (
 		<div className="header">
 			<ul>
@@ -14,7 +14,7 @@ function LayoutHeader(){
 				</li>
 			</ul>
 		</div>
-	)
+	);
 }
 
 export default LayoutHeader;

@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import reactIcon from '../../icon/react-icon.png'
+import React, { Component, } from 'react';
+import reactIcon from '../../icon/react-icon.png';
 import './style.scss';
 
 class Home extends Component {
@@ -12,8 +11,8 @@ class Home extends Component {
 					Hello World!!!
 				</div>
 			</div>
-		)
+		);
 	}
 }
 
-export default Home
+export default Home;

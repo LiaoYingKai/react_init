@@ -1,10 +1,10 @@
-import React from 'react'
-import { HashRouter as Router, } from 'react-router-dom'
-import RouteLayout from './route'
-import LayoutHeader from '../components/layout-header'
-import './style.scss'
+import React from 'react';
+import { HashRouter as Router, } from 'react-router-dom';
+import RouteLayout from './route';
+import LayoutHeader from '../components/layout-header';
+import './style.scss';
 
-function Layout(){
+function Layout() {
 	return (
 		<Router>
 			<LayoutHeader/>
@@ -12,7 +12,7 @@ function Layout(){
 				<RouteLayout/>
 			</div>
 		</Router>
-	)
+	);
 }
 
-export default Layout
+export default Layout;
