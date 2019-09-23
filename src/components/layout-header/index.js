@@ -12,6 +12,9 @@ function LayoutHeader() {
 				<li>
 					<NavLink to="/About" activeClassName="activeLink">About</NavLink>
 				</li>
+				<li>
+					<NavLink to="/Contact" activeClassName="activeLink">Contact</NavLink>
+				</li>
 			</ul>
 		</div>
 	);
