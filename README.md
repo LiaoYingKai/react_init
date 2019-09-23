@@ -38,3 +38,4 @@
 配置可以看 webpack.config.js
 
 - 可與另一個專案 [my react create](https://github.com/LiaoYingKai/my-react-create) 一起看
+- route 的配置可以參考與[route config example](https://github.com/LiaoYingKai/route_config_example)
