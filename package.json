@@ -4,8 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
-		"watch": "webpack --watch ",
+		"dev": "webpack-dev-server --devtool eval --progress --colors --content-base --hot",
 		"build": "webpack"
 	},
 	"keywords": [],
