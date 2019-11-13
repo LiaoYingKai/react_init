@@ -28,6 +28,7 @@
 > 格式 / eslint
 >> eslint
 >> eslint-plugin-react
+>> eslint-plugin-react-hook
 >> eslint-plugin-async-await
 
 > babel
