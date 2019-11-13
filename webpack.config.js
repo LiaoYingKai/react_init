@@ -1,5 +1,6 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
 	entry: path.join(__dirname, 'src', 'index.js'),
 	output: {
@@ -14,18 +15,18 @@ module.exports = {
 			use: ['babel-loader']
 		}, {
 			test: /\.(css|scss)$/,
-			use: ['style-loader', // creates style nodes from JS strings
-				'css-loader', // translates CSS into CommonJS
-				'sass-loader' // compiles Sass to CSS, using Node Sass by default
+			use: ['style-loader',
+				'css-loader',
+				'sass-loader'
 			]
 		},{
 			test: /\.(jpe?g|png|gif|svg)$/,
 			use: [
-			{
+				{
 					loader: 'url-loader',
 					options: { limit: 40000 }
-			},
-			'image-webpack-loader'
+				},
+				'image-webpack-loader'
 			]
 		}] 
 	},

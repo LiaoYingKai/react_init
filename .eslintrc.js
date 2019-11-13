@@ -14,7 +14,8 @@ module.exports = {
 	},
 	"plugins": [
 		"async-await",
-		"react"
+		"react",
+		"react-hooks"
 	],
 	"settings": {
 		"react": {
@@ -33,6 +34,8 @@ module.exports = {
 		"keyword-spacing": "error",
 		"space-in-parens": ["error", "never"],
 		"space-before-blocks": "error",
-		"arrow-spacing": "error"
+		"arrow-spacing": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn"
 	}
 };
