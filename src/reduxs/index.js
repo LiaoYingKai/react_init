@@ -1,8 +1,12 @@
+import { combineEpics } from 'redux-observable';
+import { addTodo } from './epics/todo-epics';
 import { combineReducers } from 'redux';
 import todo from './reducer/todo';
 
-const musicPlayer = combineReducers({
+export const rootEpic = combineEpics(
+	addTodo,
+);
+
+export const rootReducer = combineReducers({
 	todo
 });
-
-export default musicPlayer;

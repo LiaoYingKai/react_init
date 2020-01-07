@@ -1,13 +1,13 @@
 import React, { Component, } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addTodoSuccess, asyncAddTodo } from '../../actions/todo-actions';
+import { addTodoSuccess, addTodo } from '../../actions/todo-actions';
 import './style.scss';
 
 const propTypes = { 
 	todos: PropTypes.array,
 	addTodoSuccess: PropTypes.func,
-	asyncAddTodo: PropTypes.func,
+	addTodo: PropTypes.func,
 };
 
 class About extends Component {
@@ -27,7 +27,7 @@ class About extends Component {
 	render() {
 		const { inputValue } = this.state;
 		const { _handleChangeValue } = this;
-		const { todos, addTodoSuccess, asyncAddTodo } = this.props;
+		const { todos = [], addTodoSuccess, addTodo } = this.props;
 
 		return (
 			<div className="about">
@@ -35,7 +35,7 @@ class About extends Component {
 					TODO：
 					<input onChange={ (event) => { _handleChangeValue(event); }} value={inputValue}></input>
 					<button onClick={ () => { addTodoSuccess(inputValue); }}>同步 Add</button>
-					<button onClick={ () => { asyncAddTodo(inputValue); }}>非同步 Add</button>
+					<button onClick={ () => { addTodo(inputValue); }}>非同步 Add</button>
 				</div>
 				<ul>
 					{
@@ -55,13 +55,13 @@ About.propTypes = propTypes;
 
 function mapStateToProps(state) {
 	return {
-		todos: state.todo.data,
+		todos: state.todo.get('data').toArray(),
 	};
 }
 function mapDispatchToProps(dispatch) {
 	return  {
 		addTodoSuccess: (todo) => dispatch(addTodoSuccess(todo)),
-		asyncAddTodo: (todo) => dispatch(asyncAddTodo(todo))
+		addTodo: (todo) => dispatch(addTodo(todo))
 	};
 }
 
