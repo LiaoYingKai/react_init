@@ -1,11 +1,11 @@
 import React from 'react';
-import { config } from './config';
+import routes from '../routes';
 import { RenderRoute } from './renderRoute';
 
 function RouteLayout() {
 	return (
 		<React.Fragment>
-			{RenderRoute(config)}
+			{RenderRoute(routes)}
 		</React.Fragment>
 	);
 }
